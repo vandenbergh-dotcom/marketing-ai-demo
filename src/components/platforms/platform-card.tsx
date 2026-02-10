@@ -15,10 +15,10 @@ interface PlatformCardProps {
   connection?: {
     id: number;
     status: string;
-    account_name?: string;
-    last_sync_at?: string;
-    error_message?: string;
-    token_expires_at?: string;
+    account_name?: string | null;
+    last_sync_at?: string | null;
+    error_message?: string | null;
+    token_expires_at?: string | null;
   };
   loading?: boolean;
 }
@@ -167,12 +167,12 @@ export function PlatformCard({ platform, connection, loading }: PlatformCardProp
                   </span>
                   <span className="text-gray-500">Token Status:</span>
                   <span>{(healthData.token_status as string) || "unknown"}</span>
-                  {healthData.token_expires_at && (
+                  {healthData.token_expires_at ? (
                     <>
                       <span className="text-gray-500">Token Expires:</span>
                       <span>{new Date(healthData.token_expires_at as string).toLocaleDateString()}</span>
                     </>
-                  )}
+                  ) : null}
                 </div>
               </div>
             )}

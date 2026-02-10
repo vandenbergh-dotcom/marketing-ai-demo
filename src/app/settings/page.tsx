@@ -8,7 +8,7 @@ export default function SettingsPage() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    api.get("/settings/organization").then(setOrg).catch(console.error);
+    api.get<{ name: string; billing_email: string; plan_tier: string }>("/settings/organization").then(setOrg).catch(console.error);
   }, []);
 
   const handleSave = async () => {
