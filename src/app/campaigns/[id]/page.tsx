@@ -339,12 +339,15 @@ export default function CampaignDetailPage() {
             {pushResult && (
               <div className="rounded-lg bg-green-50 p-3 text-xs">
                 <p className="font-medium text-green-700">Push Result: {(pushResult as Record<string, unknown>).status as string}</p>
-                {Object.entries((pushResult as Record<string, Record<string, unknown>>).platform_results || {}).map(([platform, res]) => (
-                  <p key={platform} className="mt-1 text-green-600">
-                    {platform}: {res.status as string}
-                    {res.error && <span className="text-red-500"> — {res.error as string}</span>}
-                  </p>
-                ))}
+                {Object.entries((pushResult as Record<string, Record<string, unknown>>).platform_results || {}).map(([platform, res]) => {
+                  const r = res as Record<string, unknown>;
+                  return (
+                    <p key={platform} className="mt-1 text-green-600">
+                      {platform}: {r.status as string}
+                      {r.error && <span className="text-red-500"> — {r.error as string}</span>}
+                    </p>
+                  );
+                })}
               </div>
             )}
 
