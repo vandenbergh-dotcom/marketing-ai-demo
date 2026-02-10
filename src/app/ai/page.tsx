@@ -352,10 +352,10 @@ function PublishingStatus({ publishing }: { publishing: NonNullable<ChatMessage[
 
 // --- Starter Campaign Cards ---
 const starterCampaigns = [
-  { title: "New Product Launch", desc: "Launch a new product with full-funnel campaign", prompt: "I want to launch a campaign for our new Berghaus Hillwalker 2.0 Gore-Tex jacket — it's a 3-in-1 waterproof jacket, lighter than the previous model" },
-  { title: "Seasonal Collection", desc: "Promote a seasonal range across platforms", prompt: "Create a Spring/Summer 2026 campaign for our new outdoor collection — Tech Tees, trail shorts, and ultralight wind smocks" },
-  { title: "Brand Awareness", desc: "Build brand recognition with new audiences", prompt: "I want to build brand awareness for Berghaus in the 18-30 adventure market — we're losing share to newer DTC brands" },
-  { title: "Retargeting & Win-back", desc: "Re-engage past visitors and abandoned carts", prompt: "Set up a retargeting campaign for people who browsed our Gore-Tex jackets but didn't purchase in the last 30 days" },
+  { title: "Hillwalker 2.0 Launch", desc: "Launch Berghaus's flagship Gore-Tex 3-in-1 jacket across UK & Ireland", prompt: "Launch a campaign for the new Berghaus Hillwalker 2.0 Gore-Tex jacket — it's our flagship 3-in-1 waterproof, 280g lighter than the previous model, with Gore-Tex 2L shell and synthetic down inner. Targeting UK and Ireland hikers, priced at £240." },
+  { title: "Trango Heritage Drop", desc: "Promote the iconic Trango Gore-Tex jacket reissue with K2 heritage storytelling", prompt: "We're relaunching the Berghaus Trango Gore-Tex jacket — originally designed in 1986 for the British K2 expedition, named after the Trango Towers. 3-layer Gore-Tex, heritage colourways blue/red and grey/blue. We want a brand campaign mixing heritage storytelling with modern performance." },
+  { title: "Spring/Summer '26 Collection", desc: "Drive sales for Tech Tees, Wandermoor Wind Smocks and Extrem shorts", prompt: "Create a full campaign for the Berghaus Spring/Summer 2026 collection — key products are sweat-wicking Tech Tees (from £35), the Wandermoor Wind Smock (280g, £95), and Extrem trail shorts. Targeting UK hikers, trail runners, and the gorpcore fashion crowd aged 18-45." },
+  { title: "Retarget Gore-Tex Browsers", desc: "Win back 45,000 people who browsed waterproof jackets but didn't buy", prompt: "Set up a retargeting campaign for the 45,000 people who browsed Berghaus Gore-Tex jackets in the last 30 days but didn't purchase. We've got a free delivery offer for orders over £80, and the Hillwalker and Trango are our hero products. Focus on Meta and Google — these are warm leads." },
 ];
 
 // --- Main Page ---
