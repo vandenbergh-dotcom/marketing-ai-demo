@@ -338,12 +338,12 @@ export default function CampaignDetailPage() {
 
             {pushResult && (
               <div className="rounded-lg bg-green-50 p-3 text-xs">
-                <p className="font-medium text-green-700">Push Result: {(pushResult as Record<string, unknown>).status as string}</p>
+                <p className="font-medium text-green-700">Push Result: {String((pushResult as Record<string, unknown>).status)}</p>
                 {Object.entries((pushResult as Record<string, Record<string, unknown>>).platform_results || {}).map(([platform, res]) => {
                   const r = res as Record<string, unknown>;
                   return (
                     <p key={platform} className="mt-1 text-green-600">
-                      {platform}: {r.status as string}
+                      {platform}: {String(r.status)}
                       {r.error ? <span className="text-red-500"> — {String(r.error)}</span> : null}
                     </p>
                   );
@@ -354,12 +354,15 @@ export default function CampaignDetailPage() {
             {syncResult && (
               <div className="rounded-lg bg-blue-50 p-3 text-xs">
                 <p className="font-medium text-blue-700">Sync Complete</p>
-                {Object.entries((syncResult as Record<string, Record<string, unknown>>).synced_platforms || {}).map(([platform, res]) => (
-                  <p key={platform} className="mt-1 text-blue-600">
-                    {platform}: {res.status as string}
-                    {res.platform_status && ` (${res.platform_status as string})`}
-                  </p>
-                ))}
+                {Object.entries((syncResult as Record<string, Record<string, unknown>>).synced_platforms || {}).map(([platform, res]) => {
+                  const r = res as Record<string, unknown>;
+                  return (
+                    <p key={platform} className="mt-1 text-blue-600">
+                      {platform}: {String(r.status)}
+                      {r.platform_status ? ` (${String(r.platform_status)})` : null}
+                    </p>
+                  );
+                })}
               </div>
             )}
           </div>
