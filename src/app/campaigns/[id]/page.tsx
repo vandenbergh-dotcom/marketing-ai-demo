@@ -344,7 +344,7 @@ export default function CampaignDetailPage() {
                   return (
                     <p key={platform} className="mt-1 text-green-600">
                       {platform}: {r.status as string}
-                      {r.error && <span className="text-red-500"> — {r.error as string}</span>}
+                      {r.error ? <span className="text-red-500"> — {String(r.error)}</span> : null}
                     </p>
                   );
                 })}
